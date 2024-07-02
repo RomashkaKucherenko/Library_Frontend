@@ -16,7 +16,6 @@
 
 .bookContainer {
 	display: flex;
-	justify-content: space-between;
 	margin: 4px 0;
 	border: 1px solid black;
 	box-sizing: border-box;
@@ -26,25 +25,39 @@
 	width: 95vw;
 	height: 40px;
 	cursor: pointer;
+	background-color: rgb(234, 234, 234);
 }
 
 .bookContainerTitleKeeper {
 	display: flex;
+	align-items: center;
+	width: 30vw;
+	margin-left: 16px;
 }
 
 .bookContainerTitle {
+	font-size: 16px;
+	font-weight: 500;
 }
 
 .bookContainerAuthorKeeper {
 	display: flex;
+	align-items: center;
+	width: 30vw;
 }
 
 .bookContainerAuthor {
+	font-size: 16px;
+	font-weight: 500;
 }
 
 .bookContainerYearKeeper {
 	display: flex;
+	align-items: center;
+	width: 30vw;
 }
 
 .bookContainerYear {
+	font-size: 16px;
+	font-weight: 500;
 }

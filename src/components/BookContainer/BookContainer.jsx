@@ -17,15 +17,15 @@ const BookContainer = ({ title, author, year, id, index }) => {
 			<div className='index'>{index + 1}.</div>
 			<div className='bookContainer'>
 				<div className='bookContainerTitleKeeper'>
-					<div>Название:</div>
+					<div className='bookContainerTitle'>Название: </div>
 					<div className='bookContainerTitle'>{title}</div>
 				</div>
 				<div className='bookContainerAuthorKeeper'>
-					<div>Автор:</div>
+					<div className='bookContainerAuthor'>Автор: </div>
 					<div className='bookContainerAuthor'>{author}</div>
 				</div>
 				<div className='bookContainerYearKeeper'>
-					<div>Год издания:</div>
+					<div className='bookContainerYear'>Год издания: </div>
 					<div className='bookContainerYear'>{year}</div>
 				</div>
 			</div>
