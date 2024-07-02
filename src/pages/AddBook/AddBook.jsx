@@ -12,7 +12,7 @@ const AddBook = () => {
 	const [author, setAuthor] = useState('')
 	const [year, setYear] = useState('')
 	const { setIsLoading, fetchBooks } = useBooksStore()
-	const navigation = useNavigate()
+	const navigate = useNavigate()
 
 	const handleTitleChange = value => {
 		setTitle(value)
@@ -39,7 +39,7 @@ const AddBook = () => {
 		if (title && author && year) {
 			setIsLoading(true)
 			addBook()
-			navigation('/')
+			navigate('/')
 			setIsLoading(false)
 		}
 	}

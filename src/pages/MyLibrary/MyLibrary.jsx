@@ -1,13 +1,15 @@
 import { TextField } from '@mui/material'
 import { useEffect, useState } from 'react'
 
+import { EditBooks } from '../EditBooks'
 import { BookContainer } from '../../components/BookContainer'
-import useBooksStore from '../../store/booksStore'
+import { useEditModal, useBooksStore } from '../../store'
 
 import './MyLibrary.css'
 
 const MyLibrary = () => {
 	const { books } = useBooksStore()
+	const { isOpen } = useEditModal()
 	const [search, setSearch] = useState('')
 
 	const handleSearchChange = value => {
@@ -31,7 +33,7 @@ const MyLibrary = () => {
 		findBooks()
 	}, [search])
 
-	return (
+	return !isOpen ? (
 		<div className='myLibraryContainer'>
 			<div className='myLibraryHeader'>
 				<div className='bookListTitle'>
@@ -54,6 +56,7 @@ const MyLibrary = () => {
 								year={book.year}
 								index={index}
 								key={`${book.title}_${book.author}`}
+								id={book.id}
 							/>
 					  ))
 					: books.map((book, index) => (
@@ -63,10 +66,13 @@ const MyLibrary = () => {
 								year={book.year}
 								index={index}
 								key={`${book.title}_${book.author}`}
+								id={book.id}
 							/>
 					  ))}
 			</div>
 		</div>
+	) : (
+		<EditBooks />
 	)
 }
 

@@ -1,8 +1,19 @@
+import { useEditModal, useEditStore } from '../../store'
+
 import './BookContainer.css'
 
-const BookContainer = ({ title, author, year, index }) => {
+const BookContainer = ({ title, author, year, id, index }) => {
+	const { setIsOpen } = useEditModal()
+	const { setTitle, setAuthor, setYear, setId } = useEditStore()
+	const chooseBook = () => {
+		setIsOpen(true)
+		setTitle(title)
+		setAuthor(author)
+		setYear(year)
+		setId(id)
+	}
 	return (
-		<div className='listItem'>
+		<button className='listItem' onClick={() => chooseBook()}>
 			<div className='index'>{index + 1}.</div>
 			<div className='bookContainer'>
 				<div className='bookContainerTitleKeeper'>
@@ -18,7 +29,7 @@ const BookContainer = ({ title, author, year, index }) => {
 					<div className='bookContainerYear'>{year}</div>
 				</div>
 			</div>
-		</div>
+		</button>
 	)
 }
 
