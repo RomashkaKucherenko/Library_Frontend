@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import axios from 'axios'
 
 const initialBooksStore = {
 	books: [],
@@ -8,9 +9,11 @@ const initialBooksStore = {
 
 const useBooksStore = create(set => ({
 	...initialBooksStore,
-	setBooks: books => {
-		set({ books })
+	fetchBooks: async () => {
+		const { data } = await axios.get('http://localhost:3002/book')
+		set({ books: data })
 	},
+	setIsLoading: status => set({ isLoading: status }),
 	setBooksErrors: error =>
 		set(prevState => ({ errors: [...prevState.errors, error] })),
 }))

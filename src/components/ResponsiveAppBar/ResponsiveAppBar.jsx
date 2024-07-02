@@ -7,19 +7,12 @@ import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import { useNavigate } from 'react-router-dom'
 
-const pages = ['', 'Pricing', 'Blog']
-
 function ResponsiveAppBar() {
 	const [anchorElNav, setAnchorElNav] = React.useState(null)
 	const navigate = useNavigate()
 
 	const handleLibraryClick = () => {
 		navigate('/')
-		setAnchorElNav(null)
-	}
-
-	const handleEditClick = () => {
-		navigate('/edit')
 		setAnchorElNav(null)
 	}
 
@@ -63,16 +56,6 @@ function ResponsiveAppBar() {
 								display: 'block',
 							}}>
 							Моя библиотека
-						</Button>
-						<Button
-							key={'Редактировать'}
-							onClick={handleEditClick}
-							sx={{
-								my: 2,
-								color: 'white',
-								display: 'block',
-							}}>
-							Редактировать
 						</Button>
 						<Button
 							key={'Добавить книгу'}

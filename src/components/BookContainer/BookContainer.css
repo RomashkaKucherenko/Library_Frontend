@@ -1,0 +1,48 @@
+.listItem {
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	gap: 8px;
+	height: 40px;
+	box-sizing: border-box;
+	margin-bottom: 12px;
+}
+
+.index {
+	font-size: 18px;
+}
+
+.bookContainer {
+	display: flex;
+	justify-content: space-between;
+	margin: 4px 0;
+	border: 1px solid black;
+	box-sizing: border-box;
+	padding: 4px;
+	border-radius: 8px;
+	align-items: center;
+	width: 95vw;
+	height: 40px;
+	cursor: pointer;
+}
+
+.bookContainerTitleKeeper {
+	display: flex;
+}
+
+.bookContainerTitle {
+}
+
+.bookContainerAuthorKeeper {
+	display: flex;
+}
+
+.bookContainerAuthor {
+}
+
+.bookContainerYearKeeper {
+	display: flex;
+}
+
+.bookContainerYear {
+}
